@@ -1,0 +1,479 @@
+body {
+    font-family: 'Manrope', sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; //потму что над body 
+    pointer-events: all;
+    justify-content: center;
+
+    &__wrapper {
+        width: 100%;
+        overflow: auto;
+    }
+
+    &__content {
+        border-radius: 4px;
+        width: 60%;
+        max-width: 1500px;
+        margin-top: 16px;
+        margin: 16px auto;
+    }
+}
+
+.shadow {
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.04);
+}
+
+.header {
+    margin: 8px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16PX;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(213, 216, 221, 1);
+
+    &__logo {
+        flex-shrink: 0;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__profile {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+
+    }
+
+    &__search-input {
+        width: 296px;
+        padding: 6px 8px 6px 8px;
+        border-radius: 4px;
+        border: 1px solid rgba(213, 216, 221, 1);
+        color: rgba(171, 177, 186, 1);
+
+
+    }
+
+    &__search-input::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(171, 177, 186, 1);
+
+    }
+
+    &__profile-name {
+        font-family: 'Manrope';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(46, 50, 56, 1);
+
+    }
+
+    &__settings-button {
+        height: 32px;
+        width: 32px;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid rgba(213, 216, 221, 1);
+        background-color: rgba(213, 216, 221, 0);
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+    height: 100vh;
+    border-right: 1px solid rgba(213, 216, 221, 1);
+
+    &__button {
+        border: none;
+        background: none;
+        padding: 16px;
+    }
+
+}
+
+.menu {
+    background: rgba(255, 255, 255, 1);
+    width: 280px;
+    height: 100vh;
+    border-right: 1px solid rgba(213, 216, 221, 1);
+
+    &__header {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding-bottom: 17px;
+        border-bottom: 1px solid rgba(213, 216, 221, 1);
+
+    }
+
+    &__button {
+        border: none;
+        background: none;
+        border: 1px solid rgba(171, 177, 186, 1);
+        border-radius: 4px;
+        padding: 4px 4.5px;
+    }
+
+    &__search {
+        padding: 6px 28px 6px 8px;
+        width: 208px;
+        height: 32px;
+        border: 1px solid rgba(171, 177, 186, 1);
+        border-radius: 4px;
+
+    }
+
+    &__search::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(171, 177, 186, 1);
+    }
+
+    &__link {
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: rgba(46, 50, 56, 1);
+        font-family: 'Manrope';
+
+    }
+}
+
+.sub-heading,
+.sub-heading-modal-window {
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.sub-heading-modal-window {
+    .sub-heading__nav {
+        position: static;
+    }
+}
+
+.sub-heading {
+    flex: 1;
+    top: 48px;
+    left: 340px;
+
+    &__nav {
+        padding-top: 16px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.04);
+        background-color: rgba(255, 255, 255, 1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 16px;
+    }
+
+    &__title-text {
+        font-family: 'Manrope';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    &__actions-one {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__actions-two {
+        display: flex;
+        gap: 4px;
+    }
+
+    &__button-create,
+    &__button-save,
+    &__button-save-exit {
+        font-family: "Manrope";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        text-align: center;
+        padding: 6px 12px;
+        border-radius: 4px;
+    }
+
+    &__button-create,
+    &__button-save-exit {
+        background-color: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(213, 216, 221, 1);
+        color: rgba(46, 50, 56, 1);
+    }
+
+    &__button-save {
+        background: rgba(0, 120, 207, 1);
+        color: rgba(255, 255, 255, 1);
+        border: none;
+    }
+
+}
+
+.task-detail {
+    &__title {
+        font-family: 'Manrope';
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__input-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    &__input-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input-wrapper--block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input-wrapper--flex {
+        display: flex;
+        gap: 8px;
+
+    }
+
+    &__label {
+        margin-bottom: 8px;
+        font-family: "Manrope";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: rgba(46, 50, 56, 1);
+
+    }
+
+    &__input {
+        padding: 6px 0 8px 6px;
+        height: 16px;
+        width: 98%;
+        gap: 4px;
+        border-radius: 4px;
+        border: 1px solid rgba(213, 216, 221, 1);
+    }
+
+    &__button-find,
+    &__button-add,
+    &__button-calendar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        padding: 6px;
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 1);
+        border: 1px solid rgba(213, 216, 221, 1)
+    }
+
+    &__icon {
+        margin-right: 4px;
+    }
+
+}
+
+.card {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .modal {
+
+        margin: 20px 16px;
+
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .nav {
+        width: 56px;
+    }
+
+    .sub-heading {
+
+        flex: 1;
+    }
+
+    .task-detail {
+        &__title {
+            margin-bottom: 24px;
+        }
+
+
+        &__input-group {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .modal {
+
+        margin: 20px 16px;
+
+    }
+
+    .sub-heading-modal-window {
+        width: 80%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .menu {
+        // z-index: -1;
+        display: none;
+        transform: translateX(-337px);
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav__button {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 4px;
+    }
+
+    .nav__button path {
+        fill: rgba(46, 50, 56, 1);
+    }
+
+    .sub-heading {
+        top: 48px;
+        left: 0px;
+
+        &__actions-one {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__actions-two {
+            display: none;
+        }
+    }
+
+
+
+    .header {
+        justify-content: flex-end;
+
+        &__logo {
+            display: none;
+        }
+
+        &__search-input {
+            display: none;
+        }
+
+        &__profile-name {
+            display: none;
+        }
+    }
+
+    .task-detail {
+        &__title {
+            margin-bottom: 24px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+            color: rgba(46, 50, 56, 1);
+
+        }
+
+        &__input-group {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+    .modal {
+
+        margin: 20px 16px;
+
+    }
+
+    .sub-heading-modal-window {
+        width: 80%;
+    }
+
+    .header {
+        justify-content: flex-end;
+
+        &__logo {
+            display: none;
+        }
+
+        &__search-input {
+            display: none;
+        }
+
+        &__profile-name {
+            display: none;
+        }
+    }
+}
