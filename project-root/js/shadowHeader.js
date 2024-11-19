@@ -1,4 +1,4 @@
-const headerElement = document.querySelector('.header');
+const headerElement = document.querySelector('.sub-heading__nav');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
